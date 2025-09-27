@@ -30,7 +30,7 @@ _start:
 ;| EBP      | 6th argument                                             |
 
     mov eax, 4        ; syscall number (sys_write)/diplay
-    mov ebx, 1        ; file descriptor (stdout)
+    mov ebx, 1        ; file descriptor (stdout)GDB Basics
     mov ecx, msg      ; address of message
     mov edx, len      ; message length
     int 0x80          ; call kernel

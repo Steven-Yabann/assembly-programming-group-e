@@ -1,7 +1,8 @@
 ; JC → Jump if Carry
 section .data
-    msg_carry db "Carry occurred (CF=1)",10,0
-    msg_nocarry db "No carry (CF=0)",10,0
+    msg_carry db "(CF=1) -> Yabann Steven 167027",10,0
+    msg_nocarry db "(CF=0) -> Yabann Steven 167027",10,0
+    msg_len equ $ - msg_nocarry
 
 section .text
     global _start
@@ -19,7 +20,7 @@ carry:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,40
+    mov edx,msg_len
     int 0x80
 
     mov eax,1

@@ -12,7 +12,7 @@ section .text
     global _start
 _start:
     mov ax, 5
-    mov bx, 5
+    mov bx, 3
 
     ; cmp ax, bx performs (ax - bx), 
     ; updates flags but does not store result

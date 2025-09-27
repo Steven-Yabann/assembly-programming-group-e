@@ -1,7 +1,7 @@
 ; JO → Jump if Overflow
 section .data
-    msg_ov db "Overflow occurred (OF=1)",10,0
-    msg_noov db "No overflow (OF=0)",10,0
+    msg_ov db "(OF=1) -> Yabann Steven 167027",10,0
+    msg_noov db "(OF=0) -> Yabann Steven 167027",10,0
 
 section .text
     global _start

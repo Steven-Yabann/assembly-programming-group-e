@@ -1,7 +1,8 @@
 ; JA / JNBE → Jump if Above
 section .data
-    str_above db "AX > BX (Above)",10,0
-    str_not_above db "AX <= BX (Not Above)",10,0
+    str_above db "Steven Yabann 167027",10,0
+    str_not_above db "Yabann Steven 167027",10,0
+    msglen equ $ - str_not_above
 
 section .text
     global _start
@@ -20,7 +21,7 @@ above:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,30
+    mov edx,msglen
     int 0x80
 
     mov eax,1

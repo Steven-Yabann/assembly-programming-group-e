@@ -1,12 +1,14 @@
 ; JS → Jump if Sign
 section .data
-    msg_neg db "Number is Negative (SF=1)",10,0
-    msg_pos db "Number is Positive (SF=0)",10,0
+    msg_neg db "Number is Negative -> Yabann Steven 167027",10,0
+    msg_pos db "Number is Positive -> Yabann Steven 167027",10,0
+
+    msg_len equ $ - msg_pos
 
 section .text
     global _start
 _start:
-    mov ax,-5
+    mov ax,5
     test ax,ax
     js negative
 
@@ -19,7 +21,7 @@ negative:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,40
+    mov edx,msg_len
     int 0x80
 
     mov eax,1

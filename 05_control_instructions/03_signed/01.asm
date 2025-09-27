@@ -1,7 +1,8 @@
 ; JG / JNLE → Jump if Greater
 section .data
-    msg_greater db "AX > BX (Signed Greater)",10,0
-    msg_not_greater db "AX <= BX (Not Greater)",10,0
+    msg_greater db " (Signed Greater) Steven Yabann 167027",10,0
+    msg_not_greater db "(Not Greater) Steven Yabann 167027",10,0
+    msg_len equ msg_not_greater - msg_greater
 
 section .text
     global _start
@@ -20,7 +21,7 @@ greater:
 print:
     mov eax,4
     mov ebx,1
-    mov edx,40
+    mov edx,msg_len
     int 0x80
 
     mov eax,1
